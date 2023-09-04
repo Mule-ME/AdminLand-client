@@ -15,9 +15,7 @@ const Layout = () => {
 
 
     const userId = useSelector(selectUserId)
-
     const { data } = useGetUserQuery(userId)
-    console.log("🚀 ~ file: index.jsx:20 ~ Layout ~ data:", data)
 
 
     return (
@@ -25,7 +23,7 @@ const Layout = () => {
             <Sidebar
                 user={data || {}}
                 isNotMobile={isNotMobile}
-                drawerWidth="250px"
+                drawerWidth="260px"
                 isSidebarOpen={isSidebarOpen}
                 setIsSidebarOpen={setIsSidebarOpen}
             />
