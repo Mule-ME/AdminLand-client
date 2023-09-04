@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { themeSettings } from "../theme/theme.js"
+import { themeSettings } from "./theme.js"
 import { selectTheme } from "./store/selectors.js"
 import Dashboard from "pages/Dashboard"
 import Layout from "layout";
