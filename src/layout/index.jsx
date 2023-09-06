@@ -4,8 +4,7 @@ import { Box, useMediaQuery } from '@mui/material'
 import { selectUserId } from 'store/selectors';
 import { useGetUserQuery } from 'store/api/api';
 import { Outlet } from 'react-router-dom'
-import Navbar from 'components/layout/Navbar';
-import Sidebar from 'components/layout/Sidebar';
+import { Navbar, Sidebar } from 'components/layout/';
 
 const Layout = () => {
 

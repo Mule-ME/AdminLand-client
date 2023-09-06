@@ -30,7 +30,7 @@ import {
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import FlexBox from "components/core/FlexBox";
+import { FlexBox } from "components/core";
 import profileImage from "assets/profile.jpg";
 
 const navItems = [
