@@ -21,7 +21,7 @@ import {
     useTheme,
 } from "@mui/material";
 import { setMode } from "store/reducer";
-import FlexBox from "components/core/FlexBox";
+import { FlexBox } from "components/core";
 import profileImage from "assets/profile.jpg";
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
