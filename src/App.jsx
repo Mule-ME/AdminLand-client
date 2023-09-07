@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { themeSettings } from "./theme.js"
 import { selectTheme } from "./store/selectors.js"
 import Layout from "layout";
-import { Dashboard, Products } from "pages"
+import { Dashboard, Products, Customers } from "pages"
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/customers" element={<Customers />} />
           </Route>
         </Routes>
       </ThemeProvider>
