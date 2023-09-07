@@ -128,7 +128,6 @@ const Sidebar = ({
                         },
                     }}
                 >
-                    {" "}
                     <Box width="100%">
                         <Box m="1.5rem 2rem 2rem 3rem">
                             <FlexBox color={theme.palette.secondary.main}>
@@ -148,7 +147,7 @@ const Sidebar = ({
                             {navItems.map(({ text, icon }) => {
                                 if (!icon) {
                                     return (
-                                        <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                                        <Typography key={text} sx={{ m: "2.25rem 0 1rem 2rem" }}>
                                             {text}
                                         </Typography>
                                     );
@@ -196,7 +195,7 @@ const Sidebar = ({
                     </Box>
                     <Box position="absolute" bottom="2rem">
                         <Divider />
-                        <FlexBox textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+                        <FlexBox textTransform="none" gap="0.5rem" m="1.5rem 2rem 0 2rem">
                             <Box
                                 component="img"
                                 alt="profile"
