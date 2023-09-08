@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Box, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 import { useGetTransactionsQuery } from "store/api/api";
-import { Header } from "components/core";
+import { Header, DataGridToolbar } from "components/core";
 
-// {dayjs(data?.lastSwapDate).format('DD-MMM-YYYY')}
 const Transactions = () => {
     const theme = useTheme();
 
@@ -15,6 +14,13 @@ const Transactions = () => {
     const [sort, setSort] = useState({});
     const [search, setSearch] = useState("");
 
+
+    //TODO: preferable to use debouncing to minimize API request
+    const handleSearch = (event) => {
+        setSearch(event.target.value);
+    };
+
+
     const { data, isLoading } = useGetTransactionsQuery({
         page,
         pageSize,
@@ -22,53 +28,74 @@ const Transactions = () => {
         search,
     });
 
-    console.log(data, "data")
+
+
 
     const columns = [
         {
             field: "_id",
-            headerName: "ID",
-            flex: 1
+            headerName: "Transaction ID",
+            flex: 1.5,
         },
         {
-            field: 'user',
+            field: "user",
             headerName: "User Name",
             flex: 1,
             renderCell: (params) => {
                 return params?.value?.name;
-            }
+            },
         },
         {
-            field: 'createdAt',
+            field: "phoneNumber",
+            headerName: "Phone Number",
+            flex: 1,
+            renderCell: (params) => {
+                return params?.row?.user?.phoneNumber;
+            },
+        },
+        {
+            field: "country",
+            headerName: "Country",
+            flex: 1,
+            renderCell: (params) => {
+                return params?.row?.user?.country;
+            },
+        },
+        {
+            field: "createdAt",
             headerName: "Created At",
-            renderCell: (params) => { dayjs(params).format('DD-MMM-YYYY') },
-            flex: 1
+            renderCell: (params) => {
+                console.log(params?.value, "params?.value")
+                return dayjs(params?.value).format("DD-MMM-YYYY");
+            },
+            flex: 1,
         },
 
         {
-            field: 'products',
+            field: "products",
             headerName: "# of  Products",
             flex: 0.5,
             sortable: false,
             renderCell: (params) => {
                 return params?.value?.length;
-            }
+            },
         },
         {
-            field: 'cost',
+            field: "cost",
             headerName: "Cost",
             flex: 2,
             renderCell: (params) => {
-                return `$${Number(params.value).toFixed(2)}`
-            }
+                return `$${Number(params.value).toFixed(2)}`;
+            },
         },
-
-    ]
+    ];
 
     return (
         <Box m="1.5rem 2.5rem">
             <Header title="Transactions" subtitle="Entire list of transaction" />
-            <Box mt="40px" height="80vh"
+            <Box
+                mt="15px"
+                height="80vh"
                 sx={{
                     "& .MuiDataGrid-root": {
                         border: "none",
@@ -92,22 +119,29 @@ const Transactions = () => {
                     "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
                         color: `${theme.palette.secondary[200]} !important`,
                     },
-                }}>
-
+                }}
+            >
                 <DataGrid
                     loading={isLoading || !data}
                     getRowId={(row) => row._id}
                     rows={(data && data?.data) || []}
                     columns={columns}
-                    rowCount={data && data.total}
+                    rowCount={(data && data.total)}
+                    rowsPerPageOptions={[20, 50, 100]}
                     pagination
                     page={page}
                     pageSize={pageSize}
                     paginationMode="server"
                     onPageChange={(newPage) => setPage(newPage)}
-
-
-
+                    onPageSizeChange={(newPage) => setPageSize(newPage)}
+                    onSortModelChange={(newSortModel) => setSort(...newSortModel)}
+                    components={{ Toolbar: DataGridToolbar }}
+                    componentsProps={{
+                        toolbar: {
+                            inputLabel: "Search...",
+                            handleChange: handleSearch,
+                        },
+                    }}
                 />
             </Box>
         </Box>
