@@ -1,61 +1,55 @@
-import React from 'react'
-import { Box, useTheme } from "@mui/material"
-import { DataGrid } from '@mui/x-data-grid'
-import { useGetCustomersQuery } from 'store/api/api'
-import { Header } from 'components/core'
+import React from "react";
+import { Box, useTheme } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import { useGetCustomersQuery } from "store/api/api";
+import { Header } from "components/core";
 
 const Customers = () => {
-
-    const theme = useTheme()
-    const { data, isLoading } = useGetCustomersQuery()
-
-    console.log(data, "Customers")
-
-
+    const theme = useTheme();
+    const { data, isLoading } = useGetCustomersQuery();
 
     const columns = [
-
-
         {
-            field: 'name',
+            field: "name",
             headerName: "Name",
-            flex: 0.5
+            flex: 0.5,
         },
         {
-            field: 'email',
+            field: "email",
             headerName: "Email",
-            flex: 1
+            flex: 1,
         },
 
         {
-            field: 'phoneNumber',
+            field: "phoneNumber",
             headerName: "Phone Number",
             flex: 0.5,
             renderCell: (params) => {
                 return params?.value?.replace(/^(\d{3})(\d{3})(\d{4})/, "($1)$2-$3");
-            }
+            },
         },
         {
-            field: 'country',
+            field: "country",
             headerName: "Country",
-            flex: 0.4
+            flex: 0.4,
         },
         {
-            field: 'occupation',
+            field: "occupation",
             headerName: "Occupation",
-            flex: 1
+            flex: 1,
         },
         {
-            field: 'role',
+            field: "role",
             headerName: "Role",
-            flex: 0.5
-        }
-    ]
+            flex: 0.5,
+        },
+    ];
     return (
         <Box m="1.5rem 2.5rem">
-
             <Header title="Customers" subtitle="List of Customers" />
-            <Box mt="40px" height="75vh"
+            <Box
+                mt="40px"
+                height="75vh"
                 sx={{
                     "& .MuiDataGrid-root": {
                         border: "none",
@@ -79,19 +73,18 @@ const Customers = () => {
                     "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
                         color: `${theme.palette.secondary[200]} !important`,
                     },
-                }}>
-
+                }}
+            >
                 <DataGrid
                     loading={isLoading || !data}
                     getRowId={(row) => row._id}
                     rows={data || []}
                     columns={columns}
-                    paginationMode='client'
-
+                    paginationMode="client"
                 />
             </Box>
         </Box>
-    )
-}
+    );
+};
 
-export default Customers
+export default Customers;

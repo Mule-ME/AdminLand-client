@@ -21,7 +21,6 @@ const Transactions = () => {
     };
 
 
-    console.log(search, "search")
     const { data, isLoading } = useGetTransactionsQuery({
         page,
         pageSize,
@@ -31,11 +30,12 @@ const Transactions = () => {
 
 
 
+
     const columns = [
         {
             field: "_id",
-            headerName: "ID",
-            flex: 1,
+            headerName: "Transaction ID",
+            flex: 1.5,
         },
         {
             field: "user",
@@ -46,12 +46,29 @@ const Transactions = () => {
             },
         },
         {
+            field: "phoneNumber",
+            headerName: "Phone Number",
+            flex: 1,
+            renderCell: (params) => {
+                return params?.row?.user?.phoneNumber;
+            },
+        },
+        {
+            field: "country",
+            headerName: "Country",
+            flex: 1,
+            renderCell: (params) => {
+                return params?.row?.user?.country;
+            },
+        },
+        {
             field: "createdAt",
             headerName: "Created At",
             renderCell: (params) => {
+                console.log(params?.value, "params?.value")
                 return dayjs(params?.value).format("DD-MMM-YYYY");
             },
-            flex: 0.5,
+            flex: 1,
         },
 
         {
@@ -77,7 +94,7 @@ const Transactions = () => {
         <Box m="1.5rem 2.5rem">
             <Header title="Transactions" subtitle="Entire list of transaction" />
             <Box
-                mt="40px"
+                mt="15px"
                 height="80vh"
                 sx={{
                     "& .MuiDataGrid-root": {
