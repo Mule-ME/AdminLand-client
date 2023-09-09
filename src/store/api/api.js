@@ -4,7 +4,7 @@ import { API_ENDPOINT } from "../../utils/constants";
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: API_ENDPOINT }),
     reducerPath: "adminApi",
-    tagTypes: ["User", "Products", "Customers", "Transactions"],
+    tagTypes: ["User", "Products", "Customers", "Transactions", "Geography"],
     endpoints: (build) => ({
         getUser: build.query({
             query: (id) => `general/user/${id}`,
@@ -25,8 +25,12 @@ export const api = createApi({
                 params: { page, pageSize, sort, search }
             }),
             providesTags: ["Transactions"]
-        })
+        }),
+        getGeography: build.query({
+            query: () => 'client/geography',
+            providesTags: ["Geography"]
+        }),
     }),
 });
 
-export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery, useGetTransactionsQuery } = api;
+export const { useGetUserQuery, useGetProductsQuery, useGetCustomersQuery, useGetTransactionsQuery, useGetGeographyQuery } = api;

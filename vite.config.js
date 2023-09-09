@@ -18,6 +18,7 @@ export default defineConfig({
       pages: '/src/pages',
       providers: '/src/providers',
       store: '/src/store',
+      utils: '/src/utils',
     },
   },
 })
