@@ -76,9 +76,9 @@ const Customers = () => {
                 }}
             >
                 <DataGrid
-                    loading={isLoading || !data}
+                    loading={isLoading || !data?.data}
                     getRowId={(row) => row._id}
-                    rows={data || []}
+                    rows={data?.data || []}
                     columns={columns}
                     paginationMode="client"
                 />
