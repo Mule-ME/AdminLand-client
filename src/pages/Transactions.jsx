@@ -126,7 +126,7 @@ const Transactions = () => {
                 }}
             >
                 <DataGrid
-                    loading={isLoading || !data?.data}
+                    loading={isLoading || !data}
                     getRowId={(row) => row._id}
                     rows={(data && data?.data) || []}
                     columns={columns}
