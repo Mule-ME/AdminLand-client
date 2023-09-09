@@ -19,7 +19,7 @@ const ProductCard = ({
     rating,
     category,
     supply,
-    state,
+    stat,
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const theme = useTheme();
@@ -72,13 +72,13 @@ const ProductCard = ({
                 }}
             >
                 <CardContent>
-                    <Typography>id:{_id}</Typography>
-                    <Typography>Supply Left:{supply}</Typography>
+                    <Typography>id: {_id}</Typography>
+                    <Typography>Supply Left: {supply}</Typography>
                     <Typography>
-                        Yearly Sales This Year:{state?.yearlySalesTotal}
+                        Yearly Sales This Year: ${stat?.yearlySalesTotal}
                     </Typography>
                     <Typography>
-                        Yearly Unit Sold Year:{state?.yearlyTotalSoldUnits}
+                        Yearly Unit Sold Year: #{stat?.yearlyTotalSoldUnits}
                     </Typography>
                 </CardContent>
             </Collapse>

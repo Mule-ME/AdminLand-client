@@ -14,7 +14,6 @@ const Transactions = () => {
     const [sort, setSort] = useState({});
     const [search, setSearch] = useState("");
 
-
     //TODO: preferable to use debouncing to minimize API request
     const handleSearch = (event) => {
         setSearch(event.target.value);
@@ -27,7 +26,6 @@ const Transactions = () => {
         sort: JSON.stringify(sort),
         search,
     });
-
 
 
 
@@ -50,7 +48,10 @@ const Transactions = () => {
             headerName: "Phone Number",
             flex: 1,
             renderCell: (params) => {
-                return params?.row?.user?.phoneNumber;
+                return params?.row?.user?.phoneNumber?.replace(
+                    /^(\d{3})(\d{3})(\d{4})/,
+                    "($1)$2-$3"
+                );
             },
         },
         {
@@ -65,7 +66,6 @@ const Transactions = () => {
             field: "createdAt",
             headerName: "Created At",
             renderCell: (params) => {
-                console.log(params?.value, "params?.value")
                 return dayjs(params?.value).format("DD-MMM-YYYY");
             },
             flex: 1,
@@ -73,11 +73,11 @@ const Transactions = () => {
 
         {
             field: "products",
-            headerName: "# of  Products",
-            flex: 0.5,
+            headerName: "No. of  Products",
+            flex: 1,
             sortable: false,
             renderCell: (params) => {
-                return params?.value?.length;
+                return params?.value?.length
             },
         },
         {
@@ -89,6 +89,10 @@ const Transactions = () => {
             },
         },
     ];
+
+
+
+
 
     return (
         <Box m="1.5rem 2.5rem">
@@ -126,7 +130,7 @@ const Transactions = () => {
                     getRowId={(row) => row._id}
                     rows={(data && data?.data) || []}
                     columns={columns}
-                    rowCount={(data && data.total)}
+                    rowCount={data && data.total}
                     rowsPerPageOptions={[20, 50, 100]}
                     pagination
                     page={page}

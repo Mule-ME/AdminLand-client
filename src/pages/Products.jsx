@@ -8,6 +8,7 @@ const Products = () => {
     const { data, isLoading } = useGetProductsQuery();
     const isNotMobile = useMediaQuery("(min-width:1000px)");
 
+    console.log(data, "data")
     return (
         <Box m="1.5rem 2.5rem">
             <Header title="Products" subtitle="See your list of products." />
@@ -35,7 +36,7 @@ const Products = () => {
                             rating,
                             category,
                             supply,
-                            state,
+                            stat,
                         }) => (
                             <ProductCard
                                 key={_id}
@@ -46,7 +47,7 @@ const Products = () => {
                                 rating={rating}
                                 category={category}
                                 supply={supply}
-                                state={state}
+                                stat={stat}
                             />
                         )
                     )}
