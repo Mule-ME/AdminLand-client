@@ -1,4 +1,16 @@
 // #E33e44  clt + k clt + g
+// #007CED
+// green: {
+//     100: "#ddf4ea",
+//     200: "#bbead5",
+//     300: "#98dfbf",
+//     400: "#76d5aa",
+//     500: "#54ca95",
+//     600: "#43a277",
+//     700: "#327959",
+//     800: "#22513c",
+//     900: "#11281e"
+// },
 
 // color design tokens export
 export const tokensDark = {
@@ -42,6 +54,7 @@ export const tokensDark = {
         800: "#665429",
         900: "#332a14",
     },
+
 };
 
 // function that reverses the color palette
