@@ -1,5 +1,6 @@
 # Admin Portal
-# DISCLAIMER: This project was developed by taking design inspiration from YouTube tutorials and videos. Feel free to use this as a starter template or reference for your own implementations.
+# DISCLAIMER: This project was developed by taking design inspiration from YouTube tutorials and videos. 
+Feel free to use this as a starter template or reference for your own implementations.
 
 This is an admin portal web app I implemented to demonstrate a full stack MERN (MongoDB, Express, React, Node.js) architecture.
 
@@ -17,9 +18,9 @@ The goal is to empower company admins with the information and controls needed t
 # Architecture
 The admin portal follows a typical full stack web application architecture:
 
-# Frontend - React, Redux, React Router, Material UI, Nivo chart
-# Backend - Node.js, Express.js REST API server
-# Database - MongoDB with Mongoose ORM
+ Frontend - React, Redux, React Router, Material UI, Nivo chart
+ Backend - Node.js, Express.js REST API server
+ Database - MongoDB with Mongoose ORM
 
 
 
@@ -60,9 +61,9 @@ https://github.com/Mule-ME/AdminLand-server repository for server(Backend)
 
 # Installation and setup
 After forking both repositories, clone them to your local machine.
-# 1, Install dependencies with npm install
-# 2, Configure environment variables
-# 3, Start development servers
+1, Install dependencies with npm install
+2, Configure environment variables
+3, Start development servers
 
 # License
 This project uses the MIT license.
