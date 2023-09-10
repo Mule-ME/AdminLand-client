@@ -107,7 +107,7 @@ const Dashboard = () => {
     return <Box m="1.5rem 2.5rem">
         <FlexBox>
             <Header title="Dashboard" subtitle="Welcome to your dashboard!" />
-            <Box>
+            {/* <Box>
                 <Button
                     sx={{
                         backgroundColor: theme.palette.secondary.light,
@@ -120,7 +120,7 @@ const Dashboard = () => {
                     <DownloadOutlined sx={{ mr: "10px" }} />
                     Download Reports
                 </Button>
-            </Box>
+            </Box> */}
         </FlexBox>
         <Box
             mt="20px"
