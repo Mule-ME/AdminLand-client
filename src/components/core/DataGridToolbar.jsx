@@ -10,6 +10,7 @@ import { Search } from "@mui/icons-material";
 import FlexBox from "./FlexBox";
 
 const DataGridToolbar = ({ inputLabel, handleChange, }) => {
+
     return (
         <GridToolbarContainer>
             <FlexBox width="100%">

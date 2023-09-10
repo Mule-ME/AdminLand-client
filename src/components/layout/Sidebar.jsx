@@ -99,10 +99,13 @@ const Sidebar = ({
     isSidebarOpen,
     setIsSidebarOpen,
 }) => {
-    const { pathname } = useLocation();
-    const [active, setActive] = useState("");
-    const navigate = useNavigate();
+
     const theme = useTheme();
+    const { pathname } = useLocation();
+    const navigate = useNavigate();
+
+    const [active, setActive] = useState("");
+
 
     useEffect(() => {
         setActive(pathname.substring(1));

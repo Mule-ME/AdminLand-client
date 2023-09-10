@@ -27,8 +27,6 @@ const Transactions = () => {
         search,
     });
 
-
-
     const columns = [
         {
             field: "_id",

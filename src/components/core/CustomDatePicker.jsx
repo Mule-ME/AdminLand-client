@@ -5,8 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-const CustomDatePicker = ({ selected, setDate, startDate, endDate, selectStart, selectEnd }) => {
-
+const CustomDatePicker = ({ selected, setDate, startDate, endDate }) => {
 
     const theme = useTheme();
 
@@ -21,8 +20,8 @@ const CustomDatePicker = ({ selected, setDate, startDate, endDate, selectStart, 
         <DatePicker
             selected={selected === startDate ? startDate : endDate}
             onChange={(date) => setDate(date)}
-            selectsStart={selectStart}
-            selectsEnd={selectEnd}
+            selectsStart
+            selectsEnd
             startDate={startDate}
             endDate={endDate}
             customInput={<CustomDateSelector />}
