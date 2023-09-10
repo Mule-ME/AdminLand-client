@@ -15,12 +15,12 @@ const OverviewChart = ({ isDashboard = false, view }) => {
 
         const { monthlyData } = data;
         const totalSalesLine = {
-            id: "totalSales",
+            id: "Total Sales",
             color: theme.palette.secondary.main,
             data: [],
         };
         const totalUnitsLine = {
-            id: "totalUnits",
+            id: "Total Units",
             color: theme.palette.secondary[600],
             data: [],
         };
