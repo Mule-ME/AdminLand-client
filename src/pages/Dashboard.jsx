@@ -40,10 +40,6 @@ const Dashboard = () => {
     });
 
 
-    console.log(data, "currentMonth, currentYear, currentDay")
-
-
-
     const columns = [
         {
             field: "_id",
@@ -107,7 +103,7 @@ const Dashboard = () => {
 
     return (
         <>
-            {!data || isLoading ?
+            {data || !isLoading ?
                 <Box m="1.5rem 2.5rem">
                     <FlexBox>
                         <Header title="Dashboard" subtitle="Welcome to your dashboard!" />
