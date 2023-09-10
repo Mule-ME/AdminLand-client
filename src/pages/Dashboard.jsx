@@ -1,7 +1,6 @@
 import React from "react";
 import {
     Box,
-    Button,
     Typography,
     useTheme,
     useMediaQuery,
@@ -15,7 +14,7 @@ import {
     PersonAdd,
     Traffic,
 } from "@mui/icons-material";
-import { useGetDashboardQuery } from "store/api/api";
+import { useGetDashboardQuery, useGetSalesQuery } from "store/api/api";
 import {
     FlexBox,
     Header,
@@ -38,7 +37,6 @@ const Dashboard = () => {
         currentYear,
         currentDay,
     });
-
 
     const columns = [
         {
@@ -107,20 +105,7 @@ const Dashboard = () => {
                 <Box m="1.5rem 2.5rem">
                     <FlexBox>
                         <Header title="Dashboard" subtitle="Welcome to your dashboard!" />
-                        {/* <Box>
-                <Button
-                    sx={{
-                        backgroundColor: theme.palette.secondary.light,
-                        color: theme.palette.background.alt,
-                        fontSize: "14px",
-                        fontWeight: "bold",
-                        padding: "10px 20px",
-                    }}
-                >
-                    <DownloadOutlined sx={{ mr: "10px" }} />
-                    Download Reports
-                </Button>
-            </Box> */}
+
                     </FlexBox>
                     <Box
                         mt="20px"

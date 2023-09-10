@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Skeleton, useMediaQuery } from "@mui/material";
 
 const DashboardSkeleton = () => {
-    const isNotMediumScreen = useMediaQuery("(min-width:768px)");
+    const isNotMediumScreen = useMediaQuery("(max-width:768px)");
 
     return (
         <Box width="100%">
