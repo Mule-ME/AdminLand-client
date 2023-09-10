@@ -4,5 +4,6 @@ import DataGridToolbar from "./DataGridToolbar";
 import OverviewChart from "./OverviewChart";
 import CustomDatePicker from "./CustomDatePicker"
 import BreakdownChart from "./BreakdownChart";
+import CustomColumnMenu from "./DataGridCustomColumnMenu"
 
-export { FlexBox, Header, DataGridToolbar, OverviewChart, CustomDatePicker, BreakdownChart }
+export { FlexBox, Header, DataGridToolbar, OverviewChart, CustomDatePicker, BreakdownChart, CustomColumnMenu }

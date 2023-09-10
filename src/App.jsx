@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { selectTheme } from "./store/selectors.js"
 import { themeSettings } from "./theme.js"
-import { Dashboard, Products, Customers, Transactions, Geography, Overview, Daily, Monthly, Breakdown } from "pages"
+import { Dashboard, Products, Customers, Transactions, Geography, Overview, Daily, Monthly, Breakdown, Admin, Performance } from "pages"
 import Layout from "layout";
 
 
@@ -29,6 +29,9 @@ function App() {
             <Route path="/daily" element={<Daily />} />
             <Route path="/monthly" element={<Monthly />} />
             <Route path="/breakdown" element={<Breakdown />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/performance" element={<Performance />} />
+
 
 
           </Route>
