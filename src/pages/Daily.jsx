@@ -1,19 +1,16 @@
 import React, { useMemo, useState } from "react";
 import { Box } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
-// import ReactDatePicker from 'react-datepicker';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { Header } from "components/core";
+import { CustomDatePicker, Header } from "components/core";
 import { useTheme } from "@emotion/react";
 import { useGetSalesQuery } from "store/api/api";
 
 const Daily = () => {
-    const [startDate, setStartDate] = useState(new Date("2021-02-01"));
-    const [endDate, setEndDate] = useState(new Date("2021-03-01"));
+    const { data, isLoading } = useGetSalesQuery();
     const theme = useTheme();
 
-    const { data, isLoading } = useGetSalesQuery();
+    const [startDate, setStartDate] = useState(new Date("2021-01-01"));
+    const [endDate, setEndDate] = useState(new Date("2021-03-01"));
 
     const [formattedData] = useMemo(() => {
         if (!data) return [];
@@ -44,29 +41,32 @@ const Daily = () => {
         return [formattedData];
     }, [data, startDate, endDate]);
 
+
+    console.log(startDate, endDate, "202101")
     return (
         <Box m="1.5rem 2.5rem">
             <Header title="Daily Sales" subtitle="Chart of daily sales" />
 
             <Box height="75vh">
-                <Box display="flex" justifyContent="flex-end">
+                <Box display="flex" justifyContent="flex-end" gap="10px">
                     <Box>
-                        <DatePicker
+                        <CustomDatePicker
                             selected={startDate}
-                            onChange={(date) => setStartDate(date)}
-                            selectsStart
                             startDate={startDate}
                             endDate={endDate}
+                            setDate={setStartDate}
+                            selectStart
+                            isClearable
                         />
                     </Box>
                     <Box>
-                        <DatePicker
+                        <CustomDatePicker
                             selected={endDate}
-                            onChange={(date) => setEndDate(date)}
-                            selectsEnd
                             startDate={startDate}
                             endDate={endDate}
-                            minDate={startDate}
+                            setDate={setEndDate}
+                            selectStart
+                            isClearable
                         />
                     </Box>
                 </Box>
