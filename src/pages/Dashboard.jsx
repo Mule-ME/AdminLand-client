@@ -40,10 +40,6 @@ const Dashboard = () => {
     });
 
 
-    console.log(data, "currentMonth, currentYear, currentDay")
-
-
-
     const columns = [
         {
             field: "_id",
