@@ -1,10 +1,8 @@
 # Admin Portal
- DISCLAIMER: This project was developed by taking design inspiration from YouTube tutorials and videos. 
-Feel free to use this as a starter template or reference for your own implementations.
 
-This is an admin portal web app I implemented to demonstrate a full stack MERN (MongoDB, Express, React, Node.js) architecture.
+This is an admin portal web app I implemented to demonstrate a full-stack MERN (MongoDB, Express, React, Node.js) architecture.
 
-While I utilized some publicly available tutorials for direction, the actual codebase, structure, and deployment was developed independently to gain hands-on experience bringing together the components of a modern JavaScript web application.
+While I utilized some publicly available tutorials for direction, the actual codebase, structure, and deployment were developed independently to gain hands-on experience bringing together the components of a modern JavaScript web application.
 # Overview
 The admin portal provides a suite of tools for managing different parts of the business and its products via a web interface. Key features include:
 
@@ -16,7 +14,7 @@ Analytics - View reports and metrics across products, users, content
 The goal is to empower company admins with the information and controls needed to manage all business operations from a central web application.
 
 # Architecture
-The admin portal follows a typical full stack web application architecture:
+The admin portal follows a typical full-stack web application architecture:
 
  Frontend - React, Redux, React Router, Material UI, Nivo chart
   Backend - Node.js, Express.js REST API server
@@ -40,7 +38,7 @@ Admins can:
 
 Browse and search products
 Modify product details like price, inventory
-Add, archive, delete products
+Add, archive, and delete products
 Uses: Custom React components, MongoDB, Redis caching
 
 
@@ -68,7 +66,10 @@ After forking both repositories, clone them to your local machine.
 # License
 This project uses the MIT license.
 
+# DISCLAIMER: 
+This project was developed by taking design inspiration from YouTube tutorials and videos. Feel free to use this as a starter template or reference for your own implementations.
+
 # Conclusion
-Building this project gave me hands-on full-stack experience with the MERN architecture. I learned how each component works and interacts in a complete modern web application.
+Building this project gave me hands-on, full-stack experience with the MERN architecture. I learned how each component works and interacts in a complete modern web application.
 In the future, I'd like to extend it by adding real-time messaging with Socket.IO, implementing CI/CD pipelines, and migrating to a cloud platform like AWS.
-Overall this was a great experience taking an admin portal from concept to working MVP, and hugely expanded my JavaScript/web dev skills.
+Overall, this was a great experience taking an admin portal from concept to working MVP, and hugely expanding my JavaScript/web dev skills.
