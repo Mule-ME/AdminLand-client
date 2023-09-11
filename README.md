@@ -1,5 +1,5 @@
 # Admin Portal
-# DISCLAIMER: This project was developed by taking design inspiration from YouTube tutorials and videos. 
+ DISCLAIMER: This project was developed by taking design inspiration from YouTube tutorials and videos. 
 Feel free to use this as a starter template or reference for your own implementations.
 
 This is an admin portal web app I implemented to demonstrate a full stack MERN (MongoDB, Express, React, Node.js) architecture.
